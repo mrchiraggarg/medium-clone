@@ -12,16 +12,23 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // 1. Create one or more users
-        $user = User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@gmail.com',
+        $users = collect([
+            User::factory()->create([
+                'name' => 'Test User',
+                'email' => 'test@gmail.com',
+            ]),
         ]);
 
         // 2. Create categories if not already there
         $categories = [
-            'Technology', 'Health', 'Lifestyle',
-            'Education', 'Travel', 'Food',
-            'Finance', 'Entertainment',
+            'Technology',
+            'Health',
+            'Lifestyle',
+            'Education',
+            'Travel',
+            'Food',
+            'Finance',
+            'Entertainment',
         ];
 
         foreach ($categories as $category) {

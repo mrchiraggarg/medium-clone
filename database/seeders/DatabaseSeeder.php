@@ -25,8 +25,9 @@ class DatabaseSeeder extends Seeder
             'Entertainment',
         ];
 
-        foreach ($categories as $category)
-            \App\Models\Category::create(['name' => $category]);
+        foreach ($categories as $category) {
+            \App\Models\Category::firstOrCreate(['name' => $category]);
+        }
 
         Post::factory(100)->create();
     }

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Category;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
@@ -18,8 +19,13 @@ class PostFactory extends Factory
     {
         $title = fake()->sentence();
         return [
-            'title' => \Illuminate\Support\Str::slug($title),
+            'image' => fake()->imageUrl(),
+            'title' => $title,
+            'slug' => \Illuminate\Support\Str::slug($title),
             'content' => fake()->paragraph(5),
+            'category_id' => Category::inRandomOrder()->first()->id,
+            'user_id' => 1,
+            'published_at' => fake()->dateTimeBetween('-1 month', 'now'),
         ];
     }
 }

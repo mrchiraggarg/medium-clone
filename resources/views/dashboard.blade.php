@@ -46,10 +46,10 @@
                 @endforelse
 
                 <!-- Pagination -->
-                @if ($posts->count() > 0 && $posts->hasPages())
-                    <div class="mt-4">
-                        {{ $posts->onEachSide(1)->links() }}
-                    </div>
+                @if ($posts->hasPages())
+                <div class="mt-4">
+                    {{ $posts->onEachSide(1)->links() }}
+                </div>
                 @endif
             </div>
         </div>

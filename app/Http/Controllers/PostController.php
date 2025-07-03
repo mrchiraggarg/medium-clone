@@ -16,7 +16,7 @@ class PostController extends Controller
     {
         $posts = Post::latest()->paginate(5);
 
-        return view('dashboard', [
+        return view('post.index', [
             'posts' => $posts,
         ]);
     }

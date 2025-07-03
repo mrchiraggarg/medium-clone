@@ -30,8 +30,8 @@
                             </svg>
                         </a>
                     </div>
-                    <a href="#" class="w-48 h-48">
-                        <img class="rounded-r-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
+                    <a href="#">
+                        <img class="w-48 h-48 object-cover rounded-r-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
                     </a>
                 </div>
                 @endforeach

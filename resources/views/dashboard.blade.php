@@ -16,6 +16,7 @@
                 </div>
             </div>
             <div class="mt-8 text-gray-900 dark:text-gray-100">
+                @php $posts = [] @endphp
                 @forelse ($posts as $post)
                 <div class="flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mb-8">
                     <div class="p-5 flex-1">
@@ -44,7 +45,12 @@
                 </div>
                 @endforelse
 
-                {{ $posts->onEachSide(1)->links() }}
+                <!-- Pagination -->
+                @if ($posts->hasPages())
+                    <div class="mt-4">
+                        {{ $posts->onEachSide(1)->links() }}
+                    </div>
+                @endif
             </div>
         </div>
     </div>

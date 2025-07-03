@@ -18,7 +18,7 @@
             <div class="mt-8 text-gray-900 dark:text-gray-100">
                 @foreach ($posts as $post)
                 <div class="flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-                    <div class="p-5">
+                    <div class="p-5 flex-1">
                         <a href="#">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
                         </a>
@@ -30,8 +30,8 @@
                             </svg>
                         </a>
                     </div>
-                    <a href="#" class="w-36 h-36">
-                        <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
+                    <a href="#" class="w-48 h-48">
+                        <img class="rounded-r-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
                     </a>
                 </div>
                 @endforeach

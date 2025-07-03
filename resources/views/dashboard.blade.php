@@ -17,7 +17,7 @@
             </div>
             <div class="mt-8 text-gray-900 dark:text-gray-100">
                 @forelse ($posts as $post)
-                <x-post-item></x-post-item>
+                <x-post-item :post="$post"></x-post-item>
                 @empty
                 <div class="text-center text-gray-500 dark:text-gray-400 py-16">
                     <p>No posts available.</p>

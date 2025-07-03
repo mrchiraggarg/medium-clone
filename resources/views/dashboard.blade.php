@@ -39,6 +39,8 @@
                     </a>
                 </div>
                 @endforeach
+
+                {{ $posts->onEachSide(1)->links() }}
             </div>
         </div>
     </div>

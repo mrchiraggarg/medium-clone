@@ -40,13 +40,13 @@
                     </a>
                 </div>
                 @empty
-                <div class="text-center text-gray-500 dark:text-gray-400">
+                <div class="text-center text-gray-500 dark:text-gray-400 py-16">
                     <p>No posts available.</p>
                 </div>
                 @endforelse
 
                 <!-- Pagination -->
-                @if ($posts->hasPages())
+                @if ($posts->count() > 0 && $posts->hasPages())
                     <div class="mt-4">
                         {{ $posts->onEachSide(1)->links() }}
                     </div>

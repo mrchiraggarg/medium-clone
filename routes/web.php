@@ -9,6 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/', [PostController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/create', [PostController::class, 'create'])->middleware(['auth', 'verified'])->name('post.create');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

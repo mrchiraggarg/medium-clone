@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [PostController::class, 'index'])->name('dashboard');
     Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
-    Route::get('/post/store', [PostController::class, 'store'])->name('post.store');
+    Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
 });
 
 Route::middleware('auth')->group(function () {

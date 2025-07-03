@@ -14,11 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
         $posts = Post::latest()->paginate(5);
 
         return view('dashboard', [
-            'categories' => $categories,
             'posts' => $posts,
         ]);
     }

@@ -10,4 +10,5 @@
     <li class="me-2">
         <span class="inline-block px-4 py-2 text-gray-500 dark:text-gray-400">No category available</span>
     </li>
+    @endforelse
 </ul>

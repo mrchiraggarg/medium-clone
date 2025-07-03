@@ -21,6 +21,9 @@ class CategoryTabs extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.category-tabs');
+        $categories = \App\Models\Category::get();
+        return view('components.category-tabs', [
+            'categories' => $categories,
+        ]);
     }
 }

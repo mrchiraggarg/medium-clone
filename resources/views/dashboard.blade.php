@@ -15,6 +15,10 @@
                     </ul>
                 </div>
             </div>
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg mt-8">
+                <div class="p-4 text-gray-900 dark:text-gray-100">
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>

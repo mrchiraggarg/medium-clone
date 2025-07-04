@@ -58,7 +58,7 @@ class PostController extends Controller
 
         Post::create($data);
 
-        
+        return redirect()->route('dashboard');
     }
 
     /**

@@ -27,7 +27,9 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return view('post.create');
+        return view('post.create', [
+            'categories' => $categories,
+        ]);
     }
 
     /**

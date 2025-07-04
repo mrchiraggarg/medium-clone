@@ -9,9 +9,8 @@
             {{ Str::limit($post->content, 150, '...') }}
         </p>
 
-         {{-- px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 --}}
-        <a href="#"
-            class="inline-flex items-center">
+        {{-- px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 --}}
+        <a href="#" class="inline-flex items-center">
             <x-primary-button>
                 Read more
                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +22,6 @@
         </a>
     </div>
     <a href="#">
-        <img class="w-48 h-full object-cover rounded-r-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg"
-            alt="" />
+        <img class="w-48 h-full max-h-64 object-cover rounded-r-lg" src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}" />
     </a>
 </div>

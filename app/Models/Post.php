@@ -9,4 +9,11 @@ use Illuminate\Testing\Fluent\Concerns\Has;
 class Post extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'image',
+        'title',
+        'content',
+        'category_id',
+    ];
 }

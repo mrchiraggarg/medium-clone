@@ -44,7 +44,7 @@ class PostController extends Controller
             'title' => 'required',
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',
-            'published' => 'nullable|datetime',
+            'published_at' => 'nullable|datetime',
         ]);
 
         $image = $data['image'];
@@ -53,7 +53,12 @@ class PostController extends Controller
         $data['user_id'] = Auth::id();
         $data['slug'] = Str::slug($data['title']);
 
+        $imagePath = $image->store('posts', 'public');
+        $data['image'] = $imagePath;
+
         Post::create($data);
+
+        
     }
 
     /**

@@ -4,7 +4,9 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="flex">
                     <div></div>
-                    <div class="w-[320px] border-l"></div>
+                    <div class="w-[320px] border-l">
+                        <x-user-avatar :user="$post->user" />
+                    </div>
                 </div>
             </div>
         </div>

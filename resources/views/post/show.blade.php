@@ -5,17 +5,17 @@
                 <h1 class="text-5xl mb-4">{{ $post->title }}</h1>
                 <div class="flex gap-4">
                     @if ($post->user->image)
-                        <img src="{{ $post->user->imageUrl() }}" class="rounded-full w-20 h-20 object-cover"
+                        <img src="{{ $post->user->imageUrl() }}" class="rounded-full w-12 h-12 object-cover"
                             alt="{{ $post->user->name }}">
                     @else
-                        <img src="https://i.pravatar.cc/300" class="rounded-full w-20 h-20 object-cover"
+                        <img src="https://i.pravatar.cc/300" class="rounded-full w-12 h-12 object-cover"
                             alt="{{ $post->user->name }}">
                     @endif
-                </div>
-                <div>
-                    <h3>{{ $post->user->name }}</h3>
-                    <div class="flex gap-2">
-                        {{ str_word_count(strip_tags($post->content)) }}
+                    <div>
+                        <h3>{{ $post->user->name }}</h3>
+                        <div class="flex gap-2">
+                            {{ $post->readTime() }} min read
+                        </div>
                     </div>
                 </div>
             </div>

@@ -33,7 +33,7 @@
         'username' => $post->user->username,
         'post' => $post->slug,
     ]) }}">
-        <img class="w-48 h-full max-h-64 object-cover rounded-r-lg" src="{{ Storage::url($post->image) }}"
+        <img class="w-48 h-full max-h-64 object-cover rounded-r-lg" src="{{ $post->imageUrl() }}"
             alt="{{ $post->title }}" />
     </a>
 </div>

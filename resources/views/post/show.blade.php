@@ -12,6 +12,12 @@
                             alt="{{ $post->user->name }}">
                     @endif
                 </div>
+                <div>
+                    <h3>{{ $post->user->name }}</h3>
+                    <div class="flex gap-2">
+                        {{ str_word_count(strip_tags($post->content)) }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

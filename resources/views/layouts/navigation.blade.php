@@ -57,6 +57,10 @@
                         </x-dropdown>
                     </div>
                 @endauth
+                @guest
+                    <a href="{{route('register')}}" class="hidden sm:flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">Create an Account</a>
+                    <a href="{{route('login')}}" class="hidden sm:flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">Login</a>
+                @endguest
 
                 <!-- Hamburger -->
                 <div class="-me-2 flex items-center sm:hidden">

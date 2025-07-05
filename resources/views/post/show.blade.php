@@ -5,7 +5,7 @@
                 <h1 class="text-5xl mb-4">{{ $post->title }}</h1>
                 <div class="flex gap-4">
                     @if ($post->user->image)
-                        <img src="{{ Storage::url($post->user->image) }}" class="rounded-full w-20 h-20 object-cover"
+                        <img src="{{ $post->user->imageUrl() }}" class="rounded-full w-20 h-20 object-cover"
                             alt="{{ $post->user->name }}">
                     @else
                         <img src="https://i.pravatar.cc/300" class="rounded-full w-20 h-20 object-cover"

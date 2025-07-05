@@ -24,6 +24,15 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="mt-8 border-t border-b">
+                    <div>
+                        <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="w-full">
+                        <div class="mt-4">
+                            {{ $post->content }}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

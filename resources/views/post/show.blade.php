@@ -4,7 +4,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-8 text-white">
                 <h1 class="text-5xl mb-4">{{ $post->title }}</h1>
                 <div class="flex gap-4">
-                    <x-user-avatar />
+                    <x-user-avatar :user="$post->user" />
                     <div>
                         <div class="flex gap-2">
                             <a href="{{ route('profile.show', $post->user) }}"

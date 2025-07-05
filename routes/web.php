@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicProfileController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/@username', [PublicProfileController::class, 'show'])->name('profile.show');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [PostController::class, 'index'])->name('dashboard');
@@ -17,4 +20,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

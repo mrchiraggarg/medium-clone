@@ -10,6 +10,8 @@ class PublicProfileController extends Controller
 {
     public function show(User $user)
     {
+        $posts = $user->post()->latest()->get();
+
         return view('profile.show', [
             'user' => $user,
         ]);

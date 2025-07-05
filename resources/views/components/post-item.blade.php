@@ -1,6 +1,10 @@
 <div class="flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mb-8">
     <div class="p-5 flex-1">
-        <a href="{{ route('post.show', $post->slug) }}">
+        <a
+            href="{{ route('post.show', [
+                'username' => $post->user->username,
+                'post' => $post->slug,
+            ]) }}">
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {{ $post->title }}
             </h5>
@@ -10,7 +14,11 @@
         </p>
 
         {{-- px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 --}}
-        <a href="{{ route('post.show', $post->slug) }}" class="inline-flex items-center">
+        <a href="{{ route('post.show', [
+            'username' => $post->user->username,
+            'post' => $post->slug,
+        ]) }}"
+            class="inline-flex items-center">
             <x-primary-button>
                 Read more
                 <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +29,11 @@
             </x-primary-button>
         </a>
     </div>
-    <a href="{{ route('post.show', $post->slug) }}">
-        <img class="w-48 h-full max-h-64 object-cover rounded-r-lg" src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}" />
+    <a href="{{ route('post.show', [
+        'username' => $post->user->username,
+        'post' => $post->slug,
+    ]) }}">
+        <img class="w-48 h-full max-h-64 object-cover rounded-r-lg" src="{{ Storage::url($post->image) }}"
+            alt="{{ $post->title }}" />
     </a>
 </div>

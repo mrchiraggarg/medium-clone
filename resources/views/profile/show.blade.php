@@ -5,7 +5,7 @@
                 <div class="flex">
                     <div class="flex-1">
                         <h1 class="text-5xl text-white">{{ $user->name }}</h1>
-                        <div>
+                        <div class="mt-8">
                             @forelse ($posts as $post)
                                 <x-post-item :post="$post"></x-post-item>
                             @empty

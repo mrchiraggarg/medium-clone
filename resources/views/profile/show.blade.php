@@ -10,7 +10,7 @@
                         <p class="text-gray-500">26K Followers</p>
                         <p class="text-white">{{ $user->bio }}</p>
                         <div>
-                            <button class="bg-emerald-600 rounded-full p-2 text-white mt-4">Follow</button>
+                            <button class="bg-emerald-600 rounded-full px-2 py-2 text-white mt-4">Follow</button>
                         </div>
                     </div>
                 </div>

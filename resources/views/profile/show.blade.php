@@ -22,7 +22,7 @@
                             this.following = !this.following
                             axios.post('/follow/{{ $user->id }}')
                                 .then(res => {
-                                    this.followersCount = res.data.followers
+                                    this.followersCount = res.data.followersCount
                                 })
                                 .catch(err => {
                                     console.log(err)

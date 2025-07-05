@@ -21,7 +21,7 @@
         <div class="mb-4">
             @if ($user->image)
                 <div>
-                    <img src="{{ Storage::url($user->image) }}" class="rounded-full h-auto w-20">
+                    <img src="{{ Storage::url($user->image) }}" class="rounded-full h-25 w-25">
                 </div>
             @endif
 

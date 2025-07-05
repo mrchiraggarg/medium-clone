@@ -33,9 +33,7 @@ class ProfileController extends Controller
         if ($image)
             $data['image'] = $image->store('avatars', 'public');
 
-        // unset($data['image']);
-        // $data['user_id'] = Auth::id();
-        // $data['slug'] = Str::slug($data['title']);
+        dd($data);
 
         $request->user()->fill($data);
 

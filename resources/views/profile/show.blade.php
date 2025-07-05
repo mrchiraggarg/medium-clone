@@ -15,15 +15,26 @@
                             @endforelse
                         </div>
                     </div>
-                    <div x-data="{ following: {{ $user->isFollowedBy(auth()->user()) ? 'true' : 'false' }} }" class="w-[320px] border-l px-8">
+                    <div x-data="{
+                        following: {{ $user->isFollowedBy(auth()->user()) ? 'true' : 'false' }},
+                        follow() {
+                            this.following = !this.following
+                            axios.post()
+                                .then(res => {
+                                    console.log(res.data)
+                                })
+                                .catch(err => {
+                                    console.log(err)
+                                })
+                        }
+                    }" class="w-[320px] border-l px-8">
                         <x-user-avatar :user="$user" size="w-24 h-24" />
                         <h3 class="text-white">{{ $user->name }}</h3>
                         <p class="text-gray-500">{{ $user->followers()->count() ?? 0 }} Followers</p>
                         <p class="text-white">{{ $user->bio }}</p>
                         @if (auth()->check() && auth()->id() !== $user->id)
                             <div x-data="{ following: {{ $user->isFollowedBy(auth()->user()) ? 'true' : 'false' }} }">
-                                <button
-                                    @click="following = !following"
+                                <button @click="follow()"
                                     class="rounded-full px-4 py-2 text-white mt-4 transition duration-200 ease-in-out"
                                     :class="following ? 'bg-red-600 hover:bg-red-700' : 'bg-emerald-600 hover:bg-emerald-700'"
                                     x-text="following ? 'Unfollow' : 'Follow'">

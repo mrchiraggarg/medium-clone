@@ -23,6 +23,7 @@
                         @if (auth()->check() && auth()->id() !== $user->id)
                             <div x-data="{ following: {{ $user->isFollowedBy(auth()->user()) ? 'true' : 'false' }} }">
                                 <button
+                                    @click="following = !following"
                                     class="rounded-full px-4 py-2 text-white mt-4 transition duration-200 ease-in-out"
                                     :class="following ? 'bg-red-600 hover:bg-red-700' : 'bg-emerald-600 hover:bg-emerald-700'"
                                     x-text="following ? 'Unfollow' : 'Follow'">

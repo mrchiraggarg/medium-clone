@@ -33,8 +33,6 @@ class ProfileController extends Controller
         if ($image)
             $data['image'] = $image->store('avatars', 'public');
 
-        dd($data);
-
         $request->user()->fill($data);
 
         if ($request->user()->isDirty('email')) {

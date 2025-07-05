@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class PublicProfileController extends Controller
 {
-    //
+    public function show(Request $request, string $username)
+    {
+        
+    }
 }

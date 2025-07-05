@@ -19,7 +19,7 @@
                         following: {{ $user->isFollowedBy(auth()->user()) ? 'true' : 'false' }},
                         follow() {
                             this.following = !this.following
-                            axios.post('/follow/{{ $user->id }}')
+                            axios.post('/follow/{{ $user->username }}')
                                 .then(res => {
                                     console.log(res.data)
                                 })

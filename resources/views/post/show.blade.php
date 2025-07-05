@@ -12,8 +12,12 @@
                             alt="{{ $post->user->name }}">
                     @endif
                     <div>
-                        <h3>{{ $post->user->name }}</h3>
-                        <div class="flex gap-2 text-gray-500">
+                        <div class="flex gap-2">
+                            <h3>{{ $post->user->name }}</h3>
+                            &middot;
+                            <a href="#" class="text-emerald-600">Follow</a>
+                        </div>
+                        <div class="flex gap-2 text-sm text-gray-500">
                             {{ $post->readTime() }} min read
                             &middot;
                             {{ $post->created_at->format('M d, Y') }}

@@ -4,16 +4,11 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-8 text-white">
                 <h1 class="text-5xl mb-4">{{ $post->title }}</h1>
                 <div class="flex gap-4">
-                    @if ($post->user->image)
-                        <img src="{{ $post->user->imageUrl() }}" class="rounded-full w-12 h-12 object-cover"
-                            alt="{{ $post->user->name }}">
-                    @else
-                        <img src="https://i.pravatar.cc/300" class="rounded-full w-12 h-12 object-cover"
-                            alt="{{ $post->user->name }}">
-                    @endif
+                    <x-user-avatar />
                     <div>
                         <div class="flex gap-2">
-                            <a href="{{ route('profile.show', $post->user) }}" class="hover:underline">{{ $post->user->name }}</a>
+                            <a href="{{ route('profile.show', $post->user) }}"
+                                class="hover:underline">{{ $post->user->name }}</a>
                             &middot;
                             <a href="#" class="text-emerald-600">Follow</a>
                         </div>

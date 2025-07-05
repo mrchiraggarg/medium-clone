@@ -10,10 +10,11 @@ class PublicProfileController extends Controller
 {
     public function show(User $user)
     {
-        $posts = $user->post()->latest()->get();
+        $posts = $user->post()->latest()->paginate();
 
         return view('profile.show', [
             'user' => $user,
+            'posts' => $posts,
         ]);
     }
 }

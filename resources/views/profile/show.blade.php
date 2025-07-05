@@ -6,9 +6,9 @@
                     <div class="flex-1"></div>
                     <div class="w-[320px] border-l px-8">
                         <x-user-avatar :user="$user" size="w-24 h-24" />
-                        <h3>{{ $user->name }}</h3>
+                        <h3 class="text-white">{{ $user->name }}</h3>
                         <p class="text-gray-500">26K Followers</p>
-                        <p>{{ $user->bio }}</p>
+                        <p class="text-white">{{ $user->bio }}</p>
                     </div>
                 </div>
             </div>

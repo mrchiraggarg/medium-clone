@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-8 text-white">
                 <h1 class="text-5xl mb-4">{{ $post->title }}</h1>
                 <div class="flex gap-4">
                     @if ($post->user->image)
@@ -18,7 +18,7 @@
                                 {{ $post->readTime() }} min read
                             </span>
                             <span>
-                                {{ $post->created_at }}
+                                {{ $post->created_at->format('M d, Y') }}
                             </span>
                         </div>
                     </div>

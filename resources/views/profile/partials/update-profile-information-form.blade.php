@@ -19,6 +19,12 @@
 
         <!-- Avatar -->
         <div class="mb-4">
+            @if ($user->image)
+                <div>
+                    <img src="{{ Storage::url($user->image) }}" class="rounded-full h-auto w-20">
+                </div>
+            @endif
+
             <x-input-label for="image" :value="__('Avatar')" />
             <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" :value="old('image')"
                 autofocus />

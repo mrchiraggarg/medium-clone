@@ -15,20 +15,7 @@
                             @endforelse
                         </div>
                     </div>
-                    <div x-data="{
-                        following: {{ $user->isFollowedBy(auth()->user()) ? 'true' : 'false' }},
-                        followersCount: {{ $user->followers()->count() }},
-                        follow() {
-                            this.following = !this.following
-                            axios.post('/follow/{{ $user->id }}')
-                                .then(res => {
-                                    this.followersCount = res.data.followersCount
-                                })
-                                .catch(err => {
-                                    console.log(err)
-                                })
-                        }
-                    }" class="w-[320px] border-l px-8">
+                    <x-follow-ctr>
                         <x-user-avatar :user="$user" size="w-24 h-24" />
                         <h3 class="text-white">{{ $user->name }}</h3>
                         <p class="text-gray-500"><span x-text="followersCount"></span> Followers</p>
@@ -42,8 +29,7 @@
                                 </button>
                             </div>
                         @endif
-
-                    </div>
+                    </x-follow-ctr>
                 </div>
             </div>
         </div>

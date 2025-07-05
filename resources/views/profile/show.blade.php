@@ -5,6 +5,15 @@
                 <div class="flex">
                     <div class="flex-1">
                         <h1 class="text-5xl text-white">{{ $user->name }}</h1>
+                        <div>
+                            @forelse ($posts as $post)
+                                <x-post-item :post="$post"></x-post-item>
+                            @empty
+                                <div class="text-center text-gray-500 dark:text-gray-400 py-16">
+                                    <p>No posts available.</p>
+                                </div>
+                            @endforelse
+                        </div>
                     </div>
                     <div class="w-[320px] border-l px-8">
                         <x-user-avatar :user="$user" size="w-24 h-24" />

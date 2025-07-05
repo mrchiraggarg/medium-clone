@@ -15,7 +15,7 @@
                             @endforelse
                         </div>
                     </div>
-                    <x-follow-ctr>
+                    <x-follow-ctr :user="$user">
                         <x-user-avatar :user="$user" size="w-24 h-24" />
                         <h3 class="text-white">{{ $user->name }}</h3>
                         <p class="text-gray-500"><span x-text="followersCount"></span> Followers</p>

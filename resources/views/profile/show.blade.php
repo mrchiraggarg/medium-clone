@@ -5,7 +5,7 @@
                 <div class="flex">
                     <div></div>
                     <div class="w-[320px] border-l">
-                        <x-user-avatar :user="$user" />
+                        <x-user-avatar :user="$user" size="w-24 h-24" />
                     </div>
                 </div>
             </div>

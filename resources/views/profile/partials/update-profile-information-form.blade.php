@@ -19,7 +19,7 @@
 
         <!-- Avatar -->
         <div class="mb-4">
-            <x-user-avatar :user="$user" />
+            <x-user-avatar :user="$user" size="h-20 w-20" />
 
             {{-- @if ($user->image)
                 <div>

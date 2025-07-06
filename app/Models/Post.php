@@ -58,9 +58,9 @@ class Post extends Model implements HasMedia
 
     public function imageUrl()
     {
-        if ($this->image)
-            return Storage::url($this->image);
-
-        return null;
+        return $this->getFirstMedia()->getUrl('preview');
+        // if ($this->image)
+        //     return Storage::url($this->image);
+        // return null;
     }
 }

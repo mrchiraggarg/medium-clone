@@ -6,6 +6,7 @@
     clap() {
         axios.post('/clap/{{ $post->id }}')
             .then(response => {
+                this.hasClapped = !this.hasClapped
                 this.count = response.data.count;
             })
             .catch(error => {

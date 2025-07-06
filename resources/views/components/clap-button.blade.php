@@ -1,4 +1,4 @@
-@props(['post' => null])
+@props(['post'])
 
 <div x-data="{
     hasClapped: {{ auth()->user()->hasClapped($post) ? 'true' : 'false' }},

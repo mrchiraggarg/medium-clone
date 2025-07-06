@@ -24,6 +24,11 @@
                     <img src="{{ $user->imageUrl('avatar') }}" alt="{{ $user->name }}"
                         class="rounded-full object-cover h-20 w-20">
                 </div>
+            @else
+                <div>
+                    <img src="https://i.pravatar.cc/300" alt="{{ $user->name }}"
+                        class="rounded-full object-cover h-20 w-20">
+                </div>
             @endif
 
             <x-input-label for="image" :value="__('Avatar')" />

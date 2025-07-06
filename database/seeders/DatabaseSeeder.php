@@ -39,10 +39,10 @@ class DatabaseSeeder extends Seeder
         // 3. Now seed posts safely
         $allCategories = Category::all();
 
-        Post::factory(100)->make()->each(function ($post) use ($users, $allCategories) {
-            $post->user_id = $users->random()->id;
-            $post->category_id = $allCategories->random()->id;
-            $post->save();
-        });
+        // Post::factory(100)->make()->each(function ($post) use ($users, $allCategories) {
+        //     $post->user_id = $users->random()->id;
+        //     $post->category_id = $allCategories->random()->id;
+        //     $post->save();
+        // });
     }
 }

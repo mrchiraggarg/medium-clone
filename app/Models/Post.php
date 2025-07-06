@@ -31,6 +31,9 @@ class Post extends Model implements HasMedia
         $this
             ->addMediaConversion('preview')
             ->width(400);
+        $this
+            ->addMediaConversion('large')
+            ->width(1200);
     }
 
     public function user()
@@ -56,9 +59,10 @@ class Post extends Model implements HasMedia
         return $minutes;
     }
 
-    public function imageUrl()
+    public function imageUrl($conversionName = '')
     {
-        return $this->getFirstMedia()->getUrl('preview');
+        return $this->getFirstMedia()?->getUrl($conversionName);
+
         // if ($this->image)
         //     return Storage::url($this->image);
         // return null;

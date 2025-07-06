@@ -17,8 +17,8 @@ class Post extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
+        // 'image',
         'user_id',
-        'image',
         'title',
         'slug',
         'content',
@@ -30,8 +30,7 @@ class Post extends Model implements HasMedia
     {
         $this
             ->addMediaConversion('preview')
-            ->width(400)
-            ->nonQueued();
+            ->width(400);
     }
 
     public function user()

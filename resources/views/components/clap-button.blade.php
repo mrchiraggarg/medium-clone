@@ -7,7 +7,7 @@
         axios.post('/clap/{{ $post->id }}')
             .then(response => {
                 this.hasClapped = !this.hasClapped
-                this.count = response.data.count;
+                this.count = response.data.clapsCount;
             })
             .catch(error => {
                 console.error(error);

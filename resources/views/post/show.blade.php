@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <x-clap-button />
+                <x-clap-button :count="$post->claps()->count()" />
 
                 <div class="mt-8">
                     <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="w-full">

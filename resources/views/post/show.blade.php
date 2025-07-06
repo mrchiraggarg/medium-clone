@@ -19,7 +19,7 @@
                         </x-follow-ctr>
                         <div class="flex gap-2 text-sm text-gray-500 px-8 border-l">
                             {{ $post->readTime() }} min read
-                            &middot;
+                            &+middot;
                             {{ $post->created_at->format('M d, Y') }}
                         </div>
                     </div>

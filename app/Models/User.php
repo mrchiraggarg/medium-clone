@@ -57,9 +57,16 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
     public function registerMediaConversions(?Media $media = null): void
     {
         $this
-            ->addMediaConversion('preview')
-            ->crop('crop-center', 128, 128)
-            ->width(128);
+            ->addMediaConversion('avatar')
+            ->width(128)
+            ->crop(128, 128);
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('avatar')
+            ->singleFile();
     }
 
     public function posts()
@@ -69,7 +76,7 @@ class User extends Authenticatable implements MustVerifyEmail, HasMedia
 
     public function imageUrl($conversionName = '')
     {
-        return $this->getFirstMedia()?->getUrl($conversionName);
+        return $this->getFirstMedia('avatar')?->getUrl($conversionName);
 
         // if ($this->image)
         //     return Storage::url($this->image);

@@ -14,12 +14,14 @@
     </form>
 
     <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
-        @csrf
+        @csrf/
         @method('patch')
 
         <!-- Avatar -->
         <div class="mb-4">
-            @if ($user->image)
+            <x-user-avatar :user="$user" />
+
+            {{-- @if ($user->image)
                 <div>
                     <img src="{{ $user->imageUrl('avatar') }}" alt="{{ $user->name }}"
                         class="rounded-full object-cover h-20 w-20">
@@ -29,7 +31,7 @@
                     <img src="https://i.pravatar.cc/300" alt="{{ $user->name }}"
                         class="rounded-full object-cover h-20 w-20">
                 </div>
-            @endif
+            @endif --}}
 
             <x-input-label for="image" :value="__('Avatar')" />
             <x-text-input id="image" class="block mt-1 w-full" type="file" name="image" :value="old('image')"

@@ -26,7 +26,7 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function clap()
+    public function claps()
     {
         return $this->hasMany(Clap::class);
     }

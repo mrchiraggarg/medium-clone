@@ -1,4 +1,4 @@
-@props(['users'])
+@props(['user'])
 
 <div x-data="{
     following: {{ $user->isFollowedBy(auth()->user()) ? 'true' : 'false' }},

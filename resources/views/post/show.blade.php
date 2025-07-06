@@ -4,15 +4,20 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-8 text-white">
                 <h1 class="text-5xl mb-4">{{ $post->title }}</h1>
                 <div class="flex gap-4">
-                    <x-user-avatar :user="$post->user" size="w-12 h-12" />
+                    <x-user-avatar :user="$post->user" />
                     <div>
-                        <div class="flex gap-2">
-                            <a href="{{ route('profile.show', $post->user) }}"
-                                class="hover:underline">{{ $post->user->name }}</a>
-                            &middot;
-                            <a href="#" class="text-emerald-600">Follow</a>
-                        </div>
-                        <div class="flex gap-2 text-sm text-gray-500">
+                        <x-follow-ctr :user="$post->user" class="flex gap-2">
+                            <a href="{{ route('profile.show', $post->user) }}" class="hover:underline">
+                                {{ $post->user->name }}
+                            </a>
+                            @auth
+                                &middot;
+                                <button x-text="following ? 'Unfollow' : 'Follow'"
+                                    :class="following ? 'text-red-600' : 'text-emerald-600'" @click="follow()">
+                                </button>
+                            @endauth
+                        </x-follow-ctr>
+                        <div class="flex gap-2 text-sm text-gray-500 px-8 border-l">
                             {{ $post->readTime() }} min read
                             &middot;
                             {{ $post->created_at->format('M d, Y') }}

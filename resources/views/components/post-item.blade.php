@@ -1,6 +1,5 @@
 <div class="flex bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 mb-8">
     <div class="p-5 flex-1">
-        {{dd($post)}}
         <a
             href="{{ route('post.show', [
                 'username' => $post->user->username,

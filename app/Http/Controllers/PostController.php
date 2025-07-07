@@ -17,6 +17,10 @@ class PostController extends Controller
      */
     public function index()
     {
+        \DB::listen(function($query) {
+            \Log::info($query->sql);
+        });
+
         $user = auth()->user();
         $query = Post::latest();
 

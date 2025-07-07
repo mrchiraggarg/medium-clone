@@ -22,7 +22,7 @@ class PostController extends Controller
         // });
 
         $user = auth()->user();
-        $query = Post::with('user')->withCount('claps')->latest();
+        $query = Post::with('user', 'media')->withCount('claps')->latest();
 
         if ($user) {
             $ids = $user->following()->pluck('users.id');

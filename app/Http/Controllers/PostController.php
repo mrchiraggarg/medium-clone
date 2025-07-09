@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostCreateRequest;
+use App\Http\Requests\PostUpdateRequest;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -51,7 +52,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(PostCreateRequest $request)
+    public function store(PostUpdateRequest $request)
     {
         $data = $request->validated();
 

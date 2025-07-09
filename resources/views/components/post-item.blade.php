@@ -20,6 +20,16 @@
             'post' => $post->slug,
         ]) }}"
             class="text-sm text-gray-400 flex gap-4">
+            <img src="{{ $post->user->gravatar() }}" alt="{{ $post->user->name }}" class="w-8 h-8 rounded-full">
+            <div class="flex flex-col">
+                <span class="font-semibold text-gray-900 dark:text-white">
+                    {{ $post->user->name }}
+                </span>
+                <span class="font-semibold text-gray-900 dark:text-white">
+                    {{ $post->user->username }}
+                </span>
+            </div>
+
             {{ $post->created_at->format('M d, Y') }}
 
             <span class="inline-flex gap-1 items-center">

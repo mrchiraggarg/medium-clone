@@ -56,7 +56,7 @@
                     @endif
 
                     <x-primary-button type="submit">
-                        Create Post
+                        Update Post
                     </x-primary-button>
                 </form>
             </div>

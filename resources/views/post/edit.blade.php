@@ -6,8 +6,9 @@
                 <strong class="font-bold">{{ $post->title }}</strong>
             </h1>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-8">
-                <form action="{{ route('post.update') }}" enctype="multipart/form-data" method="POST">
+                <form action="{{ route('post.update', $post->id) }}" enctype="multipart/form-data" method="POST">
                     @csrf
+                    @method('put')
 
                     <!-- Title -->
                     <div class="mb-4">

@@ -48,6 +48,12 @@
                         <x-input-error :messages="$errors->get('image')" class="mt-2" />
                     </div>
 
+                    @if ($post->imageUrl())
+                        <div class="my-8">
+                            <img src="{{ $post->imageUrl() }}" alt="{{ $post->title }}" class="w-full">
+                        </div>
+                    @endif
+
                     <x-primary-button type="submit">
                         Create Post
                     </x-primary-button>

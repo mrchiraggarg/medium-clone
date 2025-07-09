@@ -61,7 +61,11 @@ class Post extends Model implements HasMedia
 
     public function imageUrl($conversionName = '')
     {
-        return $this->getFirstMedia()?->getUrl($conversionName);
+        $media = $this->getFirstMedia($conversionName);
+        if ($media->hasGeneratedConversion($conversionName))
+            return $media->getUrl($conversionName);
+
+        return $media->getUrl();
 
         // if ($this->image)
         //     return Storage::url($this->image);

@@ -18,7 +18,7 @@
         <div class="text-sm text-gray-400 flex gap-4">
             {{-- <img src="{{ $post->user->imageUrl() }}" alt="{{ $post->user->name }}" class="w-8 h-8 rounded-full"> --}}
             <div class="">
-                Published By:
+                By
                 <a href="{{ route('profile.show', $post->user->username) }}" class="hover:underline">
                     <span class="font-semibold text-gray-900 dark:text-white">
                         {{ $post->user->name }}

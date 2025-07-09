@@ -25,6 +25,10 @@
                     </div>
                 </div>
 
+                <div class="py-4 mt-4 border-t border-gray-200">
+                    <x-primary-button>Edit Post</x-primary-button>
+                </div>
+
                 <x-clap-button :post="$post" />
 
                 <div class="mt-8">

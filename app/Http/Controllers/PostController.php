@@ -85,7 +85,12 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        if ($post->user_id !== Auth::id())
+            abort(403);
+
+        return view('post.edit', [
+            'post' => $post,
+        ]);
     }
 
     /**
@@ -93,7 +98,9 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        if ($post->user_id !== Auth::id())
+            abort(403);
+
     }
 
     /**

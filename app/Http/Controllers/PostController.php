@@ -25,8 +25,10 @@ class PostController extends Controller
         $query = Post::with(['user', 'media'])->withCount('claps')->latest();
 
         if ($user) {
-            $ids = $user->following()->pluck('users.id');
-            $query->whereIn('user_id', $ids);
+            $query->where('user_id', $user->id);
+
+            // $ids = $user->following()->pluck('users.id');
+            // $query->whereIn('user_id', $ids);
         }
 
         $posts = $query->paginate(5);

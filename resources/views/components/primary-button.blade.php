@@ -1,4 +1,4 @@
-$@props(['href' => null])
+@props(['href' => null])
 
 @if ($href)
     <a href="{{ $href }}"

@@ -25,8 +25,9 @@
                     </div>
                 </div>
 
-                <div class="py-4 mt-4 border-t border-gray-200">
+                <div class="py-4 mt-8 border-t border-b border-gray-200">
                     <x-primary-button>Edit Post</x-primary-button>
+                    <x-danger-button>Delete Post</x-danger-button>
                 </div>
 
                 <x-clap-button :post="$post" />

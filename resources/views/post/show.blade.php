@@ -27,7 +27,13 @@
 
                 <div class="py-4 mt-8 border-t border-b border-gray-200">
                     <x-primary-button>Edit Post</x-primary-button>
-                    <x-danger-button>Delete Post</x-danger-button>
+                    <form class="inline-block" action="{{ route('post.destroy', $post) }}" method="POST">
+                        @csrf
+                        @method('delete')
+
+
+                        <x-danger-button>Delete Post</x-danger-button>
+                    </form>
                 </div>
 
                 <x-clap-button :post="$post" />

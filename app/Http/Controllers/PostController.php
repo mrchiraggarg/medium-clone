@@ -101,7 +101,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return redirect()->route('dashboard');
     }
 
     public function category(Category $category)

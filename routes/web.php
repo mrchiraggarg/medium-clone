@@ -14,6 +14,7 @@ Route::get('/@{username}/{post:slug}', [PostController::class, 'show'])->name('p
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/category/{category}', [PostController::class, 'category'])->name('post.byCategory');
     Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+    Route::get('/my-posts', [PostController::class, 'myPosts'])->name('myPosts');
     Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
     Route::post('/follow/{user}', [FollowerController::class, 'followUnfollow'])->name('follow');
     Route::post('/clap/{post}', [ClapController::class, 'clap'])->name('clap');

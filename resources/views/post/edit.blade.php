@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
-            <h1 class="text-3xl mb-4">Update Post: <strong class="font-bold">{{ $post->name }}</strong></h1>
+            <h1 class="text-3xl mb-4">Update Post: <strong class="font-bold">{{ $post->title }}</strong></h1>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-8">
                 <form action="{{ route('post.store') }}" enctype="multipart/form-data" method="POST">
                     @csrf

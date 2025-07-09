@@ -23,7 +23,7 @@ class PostController extends Controller
         // });
 
         $user = auth()->user();
-        $query = Post::with(['user', 'media'])->where('published_at', '<=', now())->withCount('claps')->latest();
+        $query = Post::with(['user', 'media'])->withCount('claps')->latest();
 
         if ($user) {
             $query->where('user_id', $user->id);
@@ -130,7 +130,7 @@ class PostController extends Controller
         // $posts = $category->posts()->with(['user', 'media'])->withCount('claps')->latest()->simplePaginate(5);
 
         $user = auth()->user();
-        $query = $category->posts()->with(['user', 'media'])->where('published_at', '<=', now())->withCount('claps')->latest();
+        $query = $category->posts()->with(['user', 'media'])->withCount('claps')->latest();
 
         if ($user) {
             $posts = $query->where('user_id', $user->id)->paginate(5);

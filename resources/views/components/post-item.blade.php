@@ -15,20 +15,18 @@
 
         {{-- px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 --}}
 
-        <a href="{{ route('post.show', [
-            'username' => $post->user->username,
-            'post' => $post->slug,
-        ]) }}"
-            class="text-sm text-gray-400 flex gap-4">
+        <div class="text-sm text-gray-400 flex gap-4">
             {{-- <img src="{{ $post->user->imageUrl() }}" alt="{{ $post->user->name }}" class="w-8 h-8 rounded-full"> --}}
             <div class="">
                 Published By:
-                <span class="font-semibold text-gray-900 dark:text-white">
-                    {{ $post->user->name }}
-                </span>
-                <span class="font-semibold text-gray-900 dark:text-white">
-                     ({{ $post->user->username }})
-                </span>
+                <a href="{{ route('profile.show', $post->user->username) }}" class="hover:underline">
+                    <span class="font-semibold text-gray-900 dark:text-white">
+                        {{ $post->user->name }}
+                    </span>
+                    <span class="font-semibold text-gray-900 dark:text-white">
+                        ({{ $post->user->username }})
+                    </span>
+                </a>
                 at
                 {{ $post->created_at->format('M d, Y') }}
             </div>
@@ -41,7 +39,7 @@
                 </svg>
                 {{ $post->claps()->count() }}
             </span>
-        </a>
+        </div>
 
         {{-- <a href="{{ route('post.show', [
             'username' => $post->user->username,

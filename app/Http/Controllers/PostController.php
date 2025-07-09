@@ -98,10 +98,12 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(PostCreateRequest $request, Post $post)
     {
         if ($post->user_id !== Auth::id())
             abort(403);
+
+            
     }
 
     /**

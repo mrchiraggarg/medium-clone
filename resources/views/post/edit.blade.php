@@ -13,7 +13,7 @@
                     <div class="mb-4">
                         <x-input-label for="title" :value="__('Title')" />
                         <x-text-input id="title" class="block mt-1 w-full" type="text" name="title"
-                            :value="old('title')" autofocus />
+                            :value="old('title', $post->title)" autofocus />
                         <x-input-error :messages="$errors->get('title')" class="mt-2" />
                     </div>
 

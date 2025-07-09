@@ -103,7 +103,13 @@ class PostController extends Controller
         if ($post->user_id !== Auth::id())
             abort(403);
 
-            
+        $data = $request->validated();
+        $post->update($data);
+
+        if ($data['image'] ?? false)
+            $post->addMediaFromRequest('image')->toMediaCollection();
+
+        return redirect()->route('dashboard');
     }
 
     /**

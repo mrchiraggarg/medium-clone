@@ -20,17 +20,18 @@
             'post' => $post->slug,
         ]) }}"
             class="text-sm text-gray-400 flex gap-4">
-            <img src="{{ $post->user->gravatar() }}" alt="{{ $post->user->name }}" class="w-8 h-8 rounded-full">
-            <div class="flex flex-col">
+            {{-- <img src="{{ $post->user->imageUrl() }}" alt="{{ $post->user->name }}" class="w-8 h-8 rounded-full"> --}}
+            <div class="">
+                Published By:
                 <span class="font-semibold text-gray-900 dark:text-white">
                     {{ $post->user->name }}
                 </span>
                 <span class="font-semibold text-gray-900 dark:text-white">
-                    {{ $post->user->username }}
+                     ({{ $post->user->username }})
                 </span>
+                at
+                {{ $post->created_at->format('M d, Y') }}
             </div>
-
-            {{ $post->created_at->format('M d, Y') }}
 
             <span class="inline-flex gap-1 items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

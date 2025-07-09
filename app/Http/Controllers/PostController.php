@@ -59,7 +59,7 @@ class PostController extends Controller
         // unset($data['image']);
 
         $data['user_id'] = Auth::id();
-        $data['slug'] = Str::slug($data['title']);
+        // $data['slug'] = Str::slug($data['title']);
 
         // $imagePath = $image->store('posts', 'public');
         // $data['image'] = $imagePath;

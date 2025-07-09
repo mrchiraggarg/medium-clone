@@ -63,10 +63,10 @@ class Post extends Model implements HasMedia
     {
         $media = $this->getFirstMedia();
         if (!$media) {
-            return $this->getFirstMedia()?->getUrl($conversionName);
+            return null;
         }
 
-        if ($conversionName && $media->hasGeneratedConversion($conversionName)) {
+        if ($media->hasGeneratedConversion($conversionName)) {
             return $media->getUrl($conversionName);
         }
 
